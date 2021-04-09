@@ -1,16 +1,15 @@
-const API_KEY = process.env.SPOONACULAR_API_KEY
 
 const express = require('express')
 
 const fetch = require('node-fetch');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 var router = express.Router()
 
-
-//TODO - this is an example of endpoints I wrote for another project that utilized an external API - to be fitted for our purposes.
-
 /**
- * @api {get} /One-call weather Request to access current, hourly, and daily weather forecast.
+ * @api {get} /recipesbyingredients sends a list of 10 recipes back based on ingredients recieved
  * @apiName GetRecipesByIngredients
  * @apiGroup Recipes
  * 
@@ -28,13 +27,17 @@ router.get("/", (req, res) => {
         let myIngredients = req.ingredients.replace(" ", "+")
         req.ranking ? myRanking = req.myRanking : myRanking = 1 
 
-        let url = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + API_KEY + '&ranking=' + myRanking 
-        + '&limitlicense=true&ignorepantry=true&ingredients=' + myIngredients
+        let myUrl = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + process.env.SPOONACULAR_API_KEY + '&ranking=' + myRanking 
+        + '&limitLicense=true&ignorePantry=true&ingredients=' + myIngredients
+        console.log(myUrl)
         
-        //When this web service gets a request, make a request to the external weather api
-        fetch(url)
+        fetch(myUrl)
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then(json => {
+                console.log(json)
+                res.send(json)
+            })
+            .catch(error => console.error('Error:', error))
     
     } else {
         res.status(400).send({
@@ -42,46 +45,5 @@ router.get("/", (req, res) => {
         })
     }
 })
-
-/**
- * @api {post} /One-call weather Request to access current, hourly, and daily weather forecast.
- * @apiName OneCallWeather
- * @apiGroup Weather
- * 
- * @apiParam {String} lat, lon	(required)	Geographical coordinates (latitude, longitude)
- * @apiParam {String} unit (Required) Units of measurement. standard, metric and imperial units are available. 
- * 
- * @apiHeader {String} authorization JWT provided from Auth get
- * 
- * @apiError (404: Unknown Error) {String} error message 
- * 
- * @apiError (400: Missing Parameters) {String} message "Missing required information"
- * 
- * @apiDescription This end point is for getting the current weather and weather forecast for a location.
- */ 
-router.post("/map", (req, res) => {
-
-    if(req.body.lat && req.body.long && req.body.units){
-        let url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + req.body.lat 
-        + '&lon=' + req.body.long + '&exclude=minutely,alerts&units=' + req.body.units + '&appid=' + process.env.OPEN_WEATHER_API_KEY
-        
-        //When this web service gets a request, make a request to the external weather api
-        request(url, function (error, response, body) {
-            if (error) {
-                res.send(error)
-            } else {
-                var n = body.indexOf("{")
-                var nakidBody = body.substring(n - 1)
-    
-                res.send(nakidBody)
-            }
-        })
-    } else {
-        res.status(400).send({
-            message: "Missing required information"
-        })
-    }
-})
-
 
 module.exports = router;
