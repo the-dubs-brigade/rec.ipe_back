@@ -4,7 +4,8 @@
   "description": "Backend for quickneasy.recipes",
   "main": "index.js",
   "scripts": {
-    "test": "index.js"
+    "test": "index.js",
+    "start": "node index.js"
   },
   "keywords": [
     "recipes"
