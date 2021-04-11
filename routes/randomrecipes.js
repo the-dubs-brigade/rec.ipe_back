@@ -21,11 +21,11 @@ var router = express.Router()
  * @apiDescription This end point is for getting a list of random recipes 
  */ 
 router.get("/", (req, res) => {
-    req.count = req.query.count;
-    if(req.count){
+    req.number = req.query.number;
+    if(req.number){
 
         let myUrl = 'https://api.spoonacular.com/recipes/random?apiKey=' + process.env.SPOONACULAR_API_KEY
-        + '&limitLicense=true&count' + req.count
+        + '&limitLicense=true&count' + req.number
 
         if (req.query.tags != undefined){
             req.tags = req.query.tags.replace(" ", "+")
