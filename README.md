@@ -11,10 +11,10 @@ Quick 'n' Easy Recipes utilizes the Spoonacular API to generate the recipes. Spo
 Future plans for Quick 'n' Easy Recipes are extensive, and The Dubs Brigade development team hopes to implement the features as they become ready. The following sections of this document will discuss the goals of the project, the desired user experience, implementation details, issues encountered, bugs fixed or still present, and future work to be done.
 
 # Credits:
-Spoonacular API
-Create-react-app
-Material-ui
-Material-ui-search-bar
+Spoonacular API,
+Create-react-app,
+Material-ui,
+Material-ui-search-bar,
 React-bootstrap
 
 # Goals of the Project:
