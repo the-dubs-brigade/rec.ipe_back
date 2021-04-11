@@ -1,14 +1,17 @@
 const express = require('express')
+var cors = require('cors');
 const app = express()
 
 const dotenv = require('dotenv');
 dotenv.config();
 
-app.use('/recipesbyingredients', cors(), require('./routes/recipesbyingredients.js')) 
+app.use(cors());
 
-app.use('/recipedetails', cors(), require('./routes/recipedetails.js'))
+app.use('/recipesbyingredients', require('./routes/recipesbyingredients.js')) 
 
-app.use('/random', cors(), require('./routes/randomrecipes.js'))
+app.use('/recipedetails', require('./routes/recipedetails.js'))
+
+app.use('/random', require('./routes/randomrecipes.js'))
   
 // app.use('/conversions', require('./routes/conversions.js'))
 
