@@ -4,11 +4,11 @@ https://gray-cliff-0fad8b61e.azurestaticapps.net/#
 
 # Introduction:
 
-Quick 'n' Easy is designed to be a web application that generates recipes based upon ingredients that the user inputs into the search bar.  The main inspiration for this application comes from the fact that during the COVID-19 pandemic and subsequent quarantine, people needed to cook at home more often than before. We recognized that people often have limited ingredients at their disposal or are simply bored of the recipes that they already know. This tool can be used to generate new recipe ideas quickly using ingredients you already have at your disposal.
+Quick 'n' Easy Recipes is designed to be a web application that generates recipes based upon ingredients that the user inputs into the search bar.  The main inspiration for this application comes from the fact that during the COVID-19 pandemic and subsequent quarantine, people needed to cook at home more often than before. We recognized that people often have limited ingredients at their disposal or are simply bored of the recipes that they already know. This tool can be used to generate new recipe ideas quickly using ingredients you already have at your disposal.
 
-Quick 'n' Easy utilizes the Spoonacular API to generate the recipes. Spoonacular recipe API includes over 360,000 recipes with detailed information such as meal classification (vegetarian, vegan, etc), nutrition facts, and much more. The Quick 'n' Easy tool generates the 10 best matching recipes from the ingredients that the user inputs which maximizes the ingredients the user has, or minimizes the ingredients that the user does not have.
+Quick 'n' Easy Recipes utilizes the Spoonacular API to generate the recipes. Spoonacular recipe API includes over 360,000 recipes with detailed information such as meal classification (vegetarian, vegan, etc), nutrition facts, and much more. The Quick 'n' Easy Recipes tool generates the 10 best matching recipes from the ingredients that the user inputs which maximizes the ingredients the user has, or minimizes the ingredients that the user does not have.
 
-Future plans for Quick 'n' Easy are extensive, and The Dubs Brigade development team hopes to implement the features as they become ready. The following sections of this document will discuss the goals of the project, the desired user experience, implementation details, issues encountered, bugs fixed or still present, and future work to be done.
+Future plans for Quick 'n' Easy Recipes are extensive, and The Dubs Brigade development team hopes to implement the features as they become ready. The following sections of this document will discuss the goals of the project, the desired user experience, implementation details, issues encountered, bugs fixed or still present, and future work to be done.
 
 # Credits:
 Spoonacular API
