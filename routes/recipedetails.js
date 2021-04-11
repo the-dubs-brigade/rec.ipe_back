@@ -8,7 +8,7 @@ var FormData = require('form-data');
 var fs = require('fs');
 
 const dotenv = require('dotenv');
-const { query } = require('express');
+
 dotenv.config();
 
 var router = express.Router()

@@ -26,10 +26,12 @@ router.get("/", (req, res) => {
 
         let myUrl = 'https://api.spoonacular.com/recipes/random?apiKey=' + process.env.SPOONACULAR_API_KEY
         + '&limitLicense=true&count' + req.count
+
         if (req.query.tags != undefined){
             req.tags = req.query.tags.replace(" ", "+")
             myUrl += '&tags='+ req.tags
         }
+        
         console.log(myUrl)
         
         fetch(myUrl)
