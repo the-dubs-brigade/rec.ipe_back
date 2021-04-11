@@ -5,7 +5,7 @@ app.use('/recipesbyingredients', require('./routes/recipesbyingredients.js'))
 
 app.use('/recipedetails', require('./routes/recipedetails.js'))
 
-// app.use('/ingredients', require('./routes/ingredients.js'))
+app.use('/random', require('./routes/randomrecipes.js'))
   
 // app.use('/conversions', require('./routes/conversions.js'))
 
